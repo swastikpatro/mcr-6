@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import { ChakraProvider, theme } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
+import RestaurantContextProvider from './context/RestaurantContextProvider';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -14,9 +15,11 @@ root.render(
   <StrictMode>
     <ColorModeScript />
     <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <RestaurantContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </RestaurantContextProvider>
     </ChakraProvider>
   </StrictMode>
 );
