@@ -21,11 +21,6 @@ const restaurantReducer = (state, action) => {
         ...state,
         restaurants: state.restaurants.map(singleRestaurant => {
           if (singleRestaurant.id === action.payloadRestaurantId) {
-            console.log(
-              singleRestaurant.averageRating,
-              action.payload.rating,
-              singleRestaurant.ratings.length + 1
-            );
             return {
               ...singleRestaurant,
               ratings: [...singleRestaurant.ratings, action.payload],
